@@ -8,7 +8,6 @@ import android.support.annotation.NonNull;
 import android.text.TextUtils;
 import android.util.Log;
 import android.view.LayoutInflater;
-import android.view.MotionEvent;
 import android.view.View;
 import android.view.ViewGroup;
 import android.view.animation.AccelerateInterpolator;
@@ -19,7 +18,6 @@ import android.widget.VideoView;
 import com.abhinav.instacropperpicker.CropContainerView;
 import com.abhinav.instacropperpicker.FileUtils;
 import com.abhinav.instacropperpicker.R;
-import com.universalvideoview.UniversalVideoView;
 import com.yalantis.ucrop.UCrop;
 import com.yalantis.ucrop.UCropFragment;
 import com.yalantis.ucrop.UCropFragmentCallback;
@@ -250,7 +248,7 @@ public class CropFragment extends UCropFragment {
 
         mGestureCropImageView.setTargetAspectRatio(
                 toggleARatio.getAspectRatioX() / toggleARatio.getAspectRatioY());
-        mGestureCropImageView.zoomOutImage(1f);
+        mGestureCropImageView.zoomOutImage(mGestureCropImageView.getMinScale());
         mGestureCropImageView.setImageToWrapCropBounds();
         mGestureCropImageView.setTag(toggleARatio.getAspectRatioTitle());
     }
