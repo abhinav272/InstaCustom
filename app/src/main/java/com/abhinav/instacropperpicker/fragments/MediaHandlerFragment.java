@@ -173,11 +173,12 @@ public class MediaHandlerFragment extends CropFragment {
     }
 
     protected int bringToFront(Uri mediaUri) {
+        if (videoView.getParent() != null) {
+            flAllCropViewsContainer.removeView(videoView);
+            return MediaState.MEDIA_BROUGHT_TO_TOP;
+        }
+
         if (removeIfSelectedTopMedia(mediaUri)) {
-            if (videoView.getParent() != null) {
-                flAllCropViewsContainer.removeView(videoView);
-                return MediaState.MEDIA_BROUGHT_TO_TOP;
-            }
             return MediaState.MEDIA_REMOVED;
         }
 
