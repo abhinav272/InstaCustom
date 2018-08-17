@@ -76,10 +76,10 @@ public class MediaHandlerFragment extends CropFragment {
         ArrayList<AspectRatio> aspectRatios = new ArrayList<>();
         aspectRatios.add(new AspectRatio("Square", 1, 1));
         if (sourceARatio > 1) {
-            aspectRatios.add(new AspectRatio("Landscape", 3, 2));
+            aspectRatios.add(new AspectRatio("Landscape", 5, 4));
             isAspectToggleEnable = true;
         } else if (sourceARatio < 1) {
-            aspectRatios.add(new AspectRatio("Portrait", 2, 3));
+            aspectRatios.add(new AspectRatio("Portrait", 4, 5));
             isAspectToggleEnable = true;
         } else {
             isAspectToggleEnable = false;
